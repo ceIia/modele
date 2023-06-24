@@ -1,0 +1,16 @@
+{
+  "extends": "@modele/tsconfig/base.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"],
+  // custom paths
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    // jsx
+    "jsx": "react-jsx",
+    "types": ["bun-types"],
+    "module": "esnext" // add this line
+  }
+}

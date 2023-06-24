@@ -4,15 +4,21 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo build --filter=docs^... --filter=!*config* && changeset publish"
   },
   "devDependencies": {
+    "@modele/eslint-config": "workspace:*",
     "@turbo/gen": "^1.9.7",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
+    "eslint": "^8.43.0",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
   "packageManager": "pnpm@7.15.0",
-  "name": "modele"
+  "name": "modele",
+  "dependencies": {
+    "@changesets/cli": "^2.26.1"
+  }
 }
