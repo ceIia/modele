@@ -58,14 +58,6 @@ export const withModele = ({
           updateTemplates();
         });
 
-        config.plugins.push({
-          apply(compiler: Compiler) {
-            compiler.hooks.afterEmit.tap("AfterEmitPlugin", () => {
-              updateTemplates();
-            });
-          },
-        });
-
         // make templates available to the rest of the application
         config.plugins.push(
           new webpack.DefinePlugin({
